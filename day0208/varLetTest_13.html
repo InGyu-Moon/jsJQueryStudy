@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var는 함수 내부만 지역변수
+        // let은 함수는 물론, if문 내부도 지역변수 (블록 단위)
+        var a=1;
+        let b=1;
+
+        function myFunction(){
+            var a=2;
+            let b=2;
+            console.log("function 내부 a : "+a);
+            console.log("function 내부 b : "+b);
+
+            if(true){
+                var a=3;
+                let b=3; 
+                console.log("function 내부 변경후 a : "+a);
+                console.log("function 내부 변경후 b : "+b);
+            }
+        }
+
+        console.log("function 외부 a : "+a); // 1
+        console.log("function 외부 b : "+b); // 1
+        console.log("------------------------")
+        myFunction(); // 2,2,3,3
+        console.log("------------------------")
+        console.log("function 외부 a : "+a); // 1
+        console.log("function 외부 b : "+b); // 1
+    </script>
+
+    <script>
+        // 전역변수
+        var m=10;
+        var n=100;
+
+        function outer(){
+            // 지역변수
+            var m=20;
+            document.write("3 outer. m ="+m+"<br>");
+            document.write("4 outer. n ="+n+"<br>");
+        }
+        document.write("1. m ="+m+"<br>");
+        document.write("2. n ="+n+"<br>");
+        outer();
+
+    </script>
+</body>
+</html>
