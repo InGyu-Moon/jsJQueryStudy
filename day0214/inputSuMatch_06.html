@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #out{
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            border: 2px solid gray;
+            width: 300px;
+            height: 200px;
+            padding: 10px 10px;
+            font-size: 11pt;
+            background-color: aquamarine;
+        }
+    </style>
+    <script>
+        var rnd;
+        var cnt=0;
+
+        window.onload=function(){
+            rnd = parseInt(Math.random()*100)+1;
+        }
+        function check(val){
+            if( val<=0 ||val>100){
+                alert("잘못입력했어요");
+                frm.num.value='';
+                return false;
+            }
+
+            cnt++;
+            if(val>rnd){
+                out.innerHTML += cnt+": "+ val+" 보다 작습니다.<br>";
+            }
+            else if(val<rnd){
+                out.innerHTML += cnt+": "+ val+" 보다 큽니다.<br>";
+            }
+            else if(val==rnd){
+                out.innerHTML += "<h4>축하합니다 정답은 " + rnd +" 입니다</h4>"
+            }
+            frm.num.value='';
+
+            if(cnt>=10){
+                out.innerHTML += "<h4>꽝!! 정답은 " + rnd +" 입니다</h4>"
+            }
+        }
+    </script>
+</head>
+<body>
+    <form action="#" name="frm">
+        <b>숫자 입력: </b>
+        <input type="text" name="num" size="5" onkeydown="if(event.keyCode==13) check(value)">
+    </form>
+
+    <div id="out">
+        <div>
+            <img src="" name="imge">
+        </div>
+    </div>
+</body>
+</html>

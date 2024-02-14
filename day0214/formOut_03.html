@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            border: solid gray 2px;
+            width: 500px;
+            border-collapse: collapse;
+        }
+    </style>
+    <script>
+        function goWrite(weight){
+            document.getElementById("out-weight").innerHTML=weight;
+        }
+        function goColor(){
+            document.getElementById("out-col").style.background=frm.col.value;
+        }
+        function goDate(date){
+            document.getElementById("out-birth").innerHTML = "생일: "+date;
+        }
+        function goProject(subject){
+            //document.getElementById("out-project").innerHTML = "주제: "+subject;
+            document.getElementById("out-project").innerHTML = "주제: "+frm.project.value;
+        }
+    </script>
+</head>
+<body>
+    <form action="#" name="frm">
+        <table>
+            <caption><b>Radio & Check</b></caption>
+            <tr height="30">
+                <td>
+                    <b>최종학력 선택</b>
+                    <!-- radio는 name이 동일해야 한다 -->
+                    <input type="radio" name="grade" value="고등학교">고등학교&nbsp;
+                    <input type="radio" name="grade" value="전문대학교">전문대학교&nbsp;
+                    <input type="radio" name="grade" value="대학원">대학원&nbsp;
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>가능한 프로그램 언어</b>
+                    <!-- check box 중복가능 -->
+                    <input type="checkbox" name="lang" value="JAVA">JAVA&nbsp;
+                    <input type="checkbox" name="lang" value="ORACLE">ORACLE&nbsp;
+                    <input type="checkbox" name="lang" value="HTML">HTML&nbsp;
+                    <input type="checkbox" name="lang" value="JQuery">JQuery&nbsp;
+                </td>
+            </tr>
+          
+            <tr>
+                <td>
+                    <b>내가 원하는 세미프로젝트 주제</b>
+                    <select name="project" onchange="goProject(this.value)">
+                        <option value="영화예매">영화예매</option>
+                        <option value="휴게소">휴게소</option>
+                        <option value="쇼핑몰">쇼핑몰</option>
+                        <option value="여행지소개" selected>여행지소개</option>
+                    </select>
+                    <span id="out-project"></span>
+                </td>
+            </tr>
+    
+            <tr>
+                <td>
+                    <b>나의 신장은 몇cm</b>
+                     <input name="height" type="number" value="160" min="140" max="210" step="2">cm
+                </td>
+            </tr>
+    
+            <tr>
+                <td>
+                    <b>나의 몸무게는 몇kg</b>
+                     <input name="weight" type="range" value="75" min="50" max="100" step="3" onchange="goWrite(this.value)">
+                     <span id="out-weight">0</span>kg
+                </td>
+            </tr>
+    
+            <tr>
+                <td>
+                    <span id="out-col"><b>좋아하는 색상 선택</b></span>
+                    <input type="color" name="col" onchange="goColor()">
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    <b>당신 생일은?</b>
+                    <input type="date" name="day" value="2000-01-01" onchange="goDate(this.value)">
+                    <span id="out-birth"></span>
+                </td>
+            </tr>
+    
+        </table>
+    </form>
+</body>
+</html>

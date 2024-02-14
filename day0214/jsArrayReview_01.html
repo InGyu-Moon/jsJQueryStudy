@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Arrat(3)으로 생성후 각 배열에 이미지를 넣고 빈복 출력</h3>
+    <script>
+        var arr1 =[];
+        arr1[0]="../image/연예인사진/1.jpg";
+        arr1[1]="../image/연예인사진/10.jpg";
+        arr1[2]="../image/연예인사진/11.jpg";
+
+        // for
+        document.write("#방법1<br>")
+
+        for(var i=0;i<3;i++){
+            var str = "<img src='"+arr1[i]+"' width='100'>";
+            document.write(str);
+        }
+
+        document.write("<br><br><br>#방법2<br>")
+
+        // of
+        for(var s1 of arr1){
+            var str = "<img src='"+s1+"' width='100'>";
+            document.write(str);
+        }
+    </script>
+
+    <h3>Array() 생성후 이미지 3개 넣고(push) of 문 으로 출력</h3>
+    <script>
+        var arr = [];
+        arr.push("../image/연예인사진/1.jpg");
+        arr.push("../image/연예인사진/10.jpg");
+        arr.push("../image/연예인사진/11.jpg");
+
+        for(var i=0;i<3;i++){
+            var str = "<img src='"+arr1[i]+"' width='100'>";
+            document.write(str);
+        }
+
+
+    </script>
+</body>
+</html>
