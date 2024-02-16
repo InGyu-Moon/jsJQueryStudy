@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
+    <script>
+        /* 3개의 버튼에 부트스트랩을 적용하고 각각의 버튼을 클릭하면 result에 해당 이미지를 출력하세요 
+            단, 출력시 @@이미지를 출력할까요? 를 물어보고 예일 경우만 이미지 출력*/
+        
+        function print(confirmMsg,src){
+            var flag = confirm(confirmMsg+"를 출력할까요?");
+            if(flag){
+                document.getElementById("result").innerHTML="<img src='"+src+"' style='width:400px'>"
+            }
+        }
+        function buttonComic(){
+            src="../image/만화이미지/01.png";
+            print("만화이미지",src);
+        }
+        function buttonFood(){
+            src="../image/Food/1.jpg";
+            print("음식이미지",src);
+        }
+        window.onload=function(){
+            document.getElementById("btnCeleb").onclick = function(){
+                src="../image/연예인사진/1.jpg";
+                print("연예인이미",src);
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <button class="btn btn-outline-primary" onclick="buttonComic()">만화이미지</button>
+    <button class="btn btn-outline-secondary" onclick="buttonFood()">음식이미지</button>
+    <button class="btn btn-outline-success" id="btnCeleb">연예인이미지</button>
+    <hr>
+    <div id="result"></div>
+</body>
+</html>

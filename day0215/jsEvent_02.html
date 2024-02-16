@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script>
+        var imgArr=[];
+        imgArr.push("../image/Food/1.jpg");
+        imgArr.push("../image/Food/2.jpg");
+        imgArr.push("../image/Food/3.jpg");
+        imgArr.push("../image/Food/4.jpg");
+        imgArr.push("../image/Food/5.jpg");
+
+        function func(){
+            var index = prompt("인덱스 번호를 입력하세요",0);
+            if(index >=0 && index <= 4){
+                src = "<img src='"+imgArr[index]+"'>";
+            console.log(src);
+            document.getElementById("result").innerHTML=src;
+            }else{
+                document.getElementById("result").innerHTML="해당 번호의 이미지는 없습니다.";
+            }  
+            
+
+        }
+    </script>
+</head>
+<body>
+    <button class="btn btn-outline-primary" onclick="func()">이미지출력</button>
+
+
+    <div id="result"></div>
+
+
+</body>
+</html>
