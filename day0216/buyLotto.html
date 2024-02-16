@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/myLotto.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
+    <style>
+        #lottoOut{
+            margin-top: 30px;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var out = document.getElementById("lottoOut");
+
+            var lotto = new Set();
+
+            document.getElementById("btn1").onclick=function(){
+                lotto.clear();
+                document.getElementById("lottoOut").innerHTML="";
+                while(lotto.size < 6){
+                    lotto.add(parseInt(Math.random()*45)+1);
+                }
+                var sortedLotto = Array.from(lotto).sort((a, b) => a - b);
+                console.log(sortedLotto);
+
+                for(var i=0;i<6;i++){
+                    document.getElementById("lottoOut").innerHTML+="<div class='lotto'>" + sortedLotto[i] + "</div>";
+                }
+
+
+            }
+            
+        }
+
+
+        
+    </script>
+
+</head>
+<body>
+    <button type="button" class="btn btn-outline-success" id="btn1">로또 구하기</button>
+
+    <div id="lottoOut">공 6개 출력</div>
+</body>
+</html>
