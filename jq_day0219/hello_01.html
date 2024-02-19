@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+
+    <script>
+        // jQuery 사용시 window.onload에 해당한다.
+        $(document).ready(function(){
+
+        })
+        // 위와 동일한 코드 (window.onload)
+        $(function(){
+            //css: 스타일 변경, 반환
+            $("#good").css("color","red");
+
+            // 방법 1
+            //둘 표기법 전부 가능
+            $("#good").css("backgroundColor","yellow");
+            $("#good").css("background-color","yellow");
+            // 방법 2
+            $("#good").css("color","blue").css("background-color","gray");
+            // 방법 3
+            // 변경할 항목이 많은 경우 object 방식도 가능하다.
+            $("#good").css({
+                "color":"magenta",
+                "background-color":"cyan",
+                "width":"300px",
+                "border":"2px solid green"
+            });
+
+            //selector가 2군데 존재해도 동시 적용
+            $("div.hello>div").css({
+                "font-size":"2em",
+                "color":"green",
+                "font-weight":"bold"
+            });
+
+            //#good의 배경색으로 div.hello의 글자색 적용
+            var goodBg = $("#good").css("background-color");
+            $("div.hello>div").css("color",goodBg);
+
+            $("div.hello>div").css("color","red");
+
+            // 한줄로
+            $("div.hello").css("background-color",$("#good").css("background-color"));
+
+            //body 태그 아래 모든 글꼴 변경
+            $("body").css("font-family","Nanum Pen Script").css("font-size","30px");
+
+            //bts div 속성 위치
+            $("div.bts").css({
+                "position":"absolute",
+                "left":"300px",
+                "top":"1200px",
+                "width":"300px",
+                "height":"150px",
+                "border":"10px inset gold"
+            });
+
+            // 모든 b 태그 글자색 변경
+            $("b").css("color","magenta");
+
+            //b태그 중에서 1번, 2번, 3번 인덱스만 변경
+            $("b:eq(1)").css("background-color","orange"); //방법 1
+            $("b").eq(2).css("background-color","orange"); // 방법 2
+
+            //전체 b태그 중에서 첫번째 (eq(0)과 동일), 마지막 border 변경
+            $("b:first").css("border","4px solid red");
+            $("b:last").css("border","4px dotted purple");
+
+            //gt(3) : 3번 이후,  lt(3): 3번이전
+            $("b:gt(1)").css("font-size","50px"); // 2번 인덱스 부터 모두 변경
+            $("b:lt(1)").css("background-color","gray"); //1번 이전 즉 0번만 변경
+
+            //첫번째 이미지 width를 200으로 변경
+            $("div.bts>div>img").css("border","1px gray solid");
+
+
+        })
+    </script>
+
+
+</head>
+<body>
+    <h2 id="good">h2 is good</h2>
+    <h3 class="good2">h3 class good2</h3>
+
+    <div class="hello">
+        div class hello
+        <div>
+            div hello 아래 div
+        </div>
+    </div>
+
+    <div class="bts">
+        <b>div bts 아래 b태그</b>
+        <span>div bts 아래 span태그</span>
+        <div>div bts 아래 div
+            <img src="../image/logoImg/a03.png">
+        </div>
+    </div>
+
+    <div class="hello">
+        div 2번째 hello
+        <img src="../image/Food/1.jpg">
+        <div>div hello 아래 div</div>
+    </div>
+
+    <b>단독 b 태그 #1</b>
+    <b>단독 b 태그 #2</b>
+    <b>단독 b 태그 #3</b>
+    
+    
+</body>
+</html>

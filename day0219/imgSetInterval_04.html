@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+    </style>
+    <script>
+        window.onload=function(){
+            
+            setInterval(() => {
+                var photoNum = parseInt(Math.random()*20)+1;
+                console.log(photoNum);
+                document.getElementById("photo").setAttribute("src","../image/연예인사진/"+photoNum+".jpg")
+            }, 3000);
+
+
+            var msgArr=["msg1","msg2","msg3"];
+            setInterval(function(){
+                var msgNum = parseInt(Math.random()*3);
+                console.log(msgNum);
+                document.querySelector(".msg").innerHTML=msgArr[msgNum];
+                
+            },3000);
+
+
+
+
+
+        }
+    </script>
+
+</head>
+<body>
+    <img src="../image/연예인사진/15.jpg" id="photo">
+    <div class="msg">메시지 출력</div>
+</body>
+</html>

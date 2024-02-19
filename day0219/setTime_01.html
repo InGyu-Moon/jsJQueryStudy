@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    
+    <style>
+        #photo{
+            position: absolute;
+        }
+    </style>
+
+    <script>
+        window.onload = function(){
+            var photo=document.querySelector("#photo");
+            var x=30;
+            var y=300;
+
+            // 초기 이미지 지정
+            photo.style.left=x+"px";
+            photo.style.top=y+"px";
+
+            var inter;
+            var ms=100;
+
+            // 버튼 이벤트
+            document.getElementById("btnGo").onclick=function(){
+                inter = setInterval(() => {
+                    x+=10;
+                    photo.style.left=x+"px";
+                }, ms);
+            }
+            document.getElementById("btnStop").onclick=function(){
+                clearInterval(inter);
+            }
+        }
+    </script>
+
+
+</head>
+<body>
+    <h3>setInterval 복습</h3>
+    <br>
+    <button id="btnGo" class="btn btn-info">Go</button>
+    <button id="btnStop" class="btn btn-danger">Stop</button>
+    <br><br>
+    <img src="../image/jquery_img/03.png" id="photo">
+
+
+
+</body>
+</html>

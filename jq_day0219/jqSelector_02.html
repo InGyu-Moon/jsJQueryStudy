@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+
+    <script>
+        $(function(){
+            // alert("처음 로딩시 호출_ window.onload()와 동일");
+            // css, attr
+            // 모든 b 태그 글꼴 크기 30으로 변경, 글꼴 변경
+            $("b").css("font-family","Nanum pen Script").css("font-size","30px");
+
+            // b태그 중에서 클래스 명이 rain인 태그배경색을 오랜지 색으로 
+            $("b.rain").css("background-color","orange");
+
+            // 모든 h2 태그의 보더를 변경하고 글자색을 파랑색으로 변경
+            $("h2").css({
+                "border":"5px solid gray",
+                "color":"blue"
+            });
+
+            //이미지 src 변경 -> 스타일은 css. 속성은 attr
+            // 모든 이미지 속성 변경
+            // $("img").attr("src","../image/Food/1.jpg").css("width","200px");
+            $("img").attr("src","../image/Food/1.jpg");
+            $("img").attr("width","200px");
+
+            //문제1
+            $(".likeimg").attr("src","../image/Food/11.jpg").css({
+                "width":"300px",
+                "border-radius":"100px",
+                "border":"solid 3px blue",
+                "box-shadow":"50px 50px 50px"
+            });
+            //문제2
+            $("span.nice").css({
+                "background-color":"pink",
+                "color":"gray",
+                "font-size":"50px"
+            })
+            //문제3
+            $("#loveimg").attr("src","../image/만화이미지/02.png").attr("title","안녕 제이쿼리");
+
+            
+        })
+    </script>
+
+
+
+</head>
+<body>
+    <h2>css, attr_jquery에서 가장 많이 사용하는 함수</h2>
+     <b class="rain">B Tag Class rain</b>
+    <br>
+    <span class="nice">Span Tag class nice</span>
+    <br>
+    <h3 class="happy">H3 Tag Class happy</h3>
+    <h2>이미지들</h2>
+    <b class="my">B Tag Class my</b>
+    <img src="">
+    <img src="" class="likeimg">
+    <img src="">
+    <img src="" title="" irum="" id="loveimg">
+</body>
+</html>
