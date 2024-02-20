@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
+    <title>Document</title>
+
+    <style>
+        div{
+            width: 500px;
+            height: 130px;
+            text-align: center;
+            line-height: 130px;
+            font-size: 25px;
+            margin-bottom: 10px;
+        }
+        .hello_0{
+            border: 13px groove gray;
+            font-family: 'Courier New', Courier, monospace;
+            background-color: pink;
+            color: blue;
+        }
+        .hello_1{
+            border: 13px groove antiquewhite;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            background-color: darkcyan;
+            color: violet;
+        }
+        .hello_2{
+            border: 13px groove yellow;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            background-color: hotpink;
+            color: red;
+        }
+        .hello_3{
+            border: 13px groove rebeccapurple;
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            background-color: gold;
+            color: honeydew;
+        }
+        .hello_4{
+            border: 13px groove green;
+            font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            background-color: wheat;
+            color: azure;
+        }
+    </style>
+
+
+</head>
+<body>
+    <button type="button" class="btn btn-info">스타일적용</button>
+    <button type="button" class="btn btn-danger">스타일제거</button>
+
+    <div>안녕하세요</div>
+    <div>오늘은 addClass</div>
+    <div>배우는날</div>
+    <div>each문도</div>
+    <div>어렵지 않아요</div>
+
+    <script>
+        $(".btn-info").click(function(){
+            $("div").each(function(idx){
+                $(this).addClass("hello_"+idx);
+            })
+        })
+
+        $(".btn-danger").click(function(){
+            // $("div").each(function(idx){
+            //     $(this).removeClass("hello_"+idx);
+            // })
+            $("div").removeClass();
+        })
+
+    </script>
+
+
+</body>
+</html>

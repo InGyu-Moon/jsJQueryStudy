@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+
+    <script>
+        $(function(){
+
+            // 1. h3>b 태그 글자색을 green으로 변경 배경색을 #ffddff로 변경
+            $("h3>b").css({
+                "color":"green",
+                "background-color":"#ffddff"
+            });
+
+            // 2. 모든 h3 너비 400px border 2px inset orange maring bottom 10px
+            $("h3").css({
+                "width":"400px",
+                "border":"2px inset orange",
+                "margin-bottom":"10px"
+            });
+
+            // 3. 모든 span 글꼴을 변경하소 글자색 purple
+            $("span").css({
+                "font-family":"Nanum Pen Script",
+                "color":"purple"
+            });
+
+            // 4. 모든 b태그 클릭하면 글자를 가져와서 h2 태그에 넣기
+            // 그리고 이미지에 해당 이미지 나태내기
+
+            $("b").click(function(){
+                var text = $(this).text();
+                $("h2").text(text);
+
+                var imgSrc = $(this).next().next().text();
+                $("img.photo").attr("src",imgSrc);
+            });
+
+
+
+        })
+    </script>
+
+
+
+</head>
+<body>
+    <h3>
+        <b>에그볶음밥</b>
+        <br>
+        <span>../image/Food/6.jpg</span>
+    </h3>
+    <h3>
+        <b>망고빙수</b>
+        <br>
+        <span>../image/Food/11.jpg</span>
+    </h3>
+    <h3>
+        <b>순두부찌개</b>
+        <br>
+        <span>../image/Food/12.jpg</span>
+    </h3>
+
+    <img src="" class="photo">
+    <h2></h2>
+</body>
+</html>

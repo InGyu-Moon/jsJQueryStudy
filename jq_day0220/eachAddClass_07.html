@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
+    <style>
+        .hello{
+            box-shadow: 10px 10px 10px gray;
+            border-radius: 30px;
+
+        }
+    </style>
+
+    <script>
+        $(function(){
+            // small 클래스 이미지 태그 너비 80 보더 알아서 css함수로
+            $("img.small").css({
+                "border":"solid 3px blue",
+                "width":"80px"
+            })
+
+            // 쇼핑몰 사진의 개수 만큼 차례대로 넣기
+            $("img.small").each(function(i){
+                $(this).attr("src","../image/쇼핑몰사진/"+(i+1)+".jpg")
+            })
+
+            // 큰 이미지 너비 300 보더 알아서 css함수로
+            $("img.big").css({
+                "border":"solid 10px red",
+                "width":"300px"
+            })
+
+            //작은 이미지에 마우스 올리면 해당 이미지 큰 이미지에 나오게
+            $("img.small").mouseover(function(){
+                $("img.big").attr("src",$(this).attr("src"));
+            })
+            $("img.small").hover(function(){
+                $(this).addClass("hello");
+                $("img.big").addClass("hello");
+            },function(){
+                $(this).removeClass("hello");
+                $("img.big").removeClass("hello");
+            })
+
+
+        })
+    </script>
+</head>
+<body>
+    <h3 class="alert alert-success">작은 이미지에 each문으로 사진 넣기</h3>
+    <img src="" class="small">
+    <img src="" class="small">
+    <img src="" class="small">
+    <img src="" class="small">
+    <img src="" class="small">
+    <img src="" class="small">
+    <img src="" class="small">
+    <img src="" class="small">
+    <img src="" class="small">
+    <img src="" class="small">
+    <img src="" class="small">
+    <img src="" class="small">
+
+    <img src="" class="big">
+
+    
+    
+
+</body>
+</html>

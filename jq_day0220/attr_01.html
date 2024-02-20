@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+
+    <script>
+        $(function(){
+            var original = "";
+            $("img").eq(0).mouseover(function(){
+                original = $(this).attr("src");
+                $(this).attr("src","../image/연예인사진/17.jpg");
+            });
+            $("img").eq(0).mouseout(function(){
+                $(this).attr("src",original);
+            });
+
+            // hover = mouseover + mouseout
+            $("h2").hover(function(){
+                $(this).css("background-color","yellow");
+            },function(){
+                $(this).css("background-color","white");
+            });
+
+            // 박보영 클릭시 4번째 사진이 박보영으로 바뀌게
+            $("img").eq(0).click(function(){
+                $("img").eq(3).attr("src",$(this).attr("src"));
+            });
+
+
+        })
+    </script>
+
+</head>
+<body>
+    <h2>박보영 사진을 마우스 갖다대면 17번 신민아로 마우스 벗어나면 다시 박보영</h2>
+    <img src="../image/연예인사진/12.jpg" width="200" irum="박보영"><br>
+
+
+    <h3>음식 사진들</h3>
+    <figure>
+        <img src="../image/Food/1.jpg" alt="">
+        <figcaption>에그센드위치</figcaption>
+    </figure>
+    <figure>
+        <img src="../image/Food/10.jpg" alt="">
+        <figcaption>스팸에그마요덮밥</figcaption>
+    </figure>
+
+    <h3>그냥 이미지들</h3>
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+
+
+
+
+
+</body>
+</html>
