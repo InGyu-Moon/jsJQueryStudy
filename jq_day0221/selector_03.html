@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    
+
+
+</head>
+<body>
+    <p>오늘 공부할 내용</p>
+    <ol>
+        <li>선택자</li>
+        <li>속성 라면</li>
+        <li>스타일</li>
+        <li>이벤트</li>
+    </ol>
+
+    <p>오늘 점심메뉴</p>
+    <ol>
+        <li>순두부찌개</li>
+        <li>햄버거</li>
+        <li>계란라면</li>
+        <li>스파게티</li>
+    </ol>
+
+    <script>
+        // $("ol li:first").css("background-color","yellow"); // 딱하나 전체에서 첫번째
+        $("ol li:first-child").css("background-color","yellow"); // 각 ol 항목의 첫번째 li
+
+        //전체 항목에서 "라면"을 찾아서 글자크기 2배
+        $("li:contains(라면)").css("font-size","2em");
+
+        //odd 홀수  even 짝수
+        $("li:odd").css("border","2px inset magenta");
+
+    </script>
+
+
+</body>
+</html>

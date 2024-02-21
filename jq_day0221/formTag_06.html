@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    
+    <style>
+        #result{
+            width: 500px;
+            height: 300px;
+            border: 2px solid gray;
+            padding: 10px 10px;
+            font-size: 25px;
+            
+        }
+    </style>
+
+</head>
+<body>
+    <form >
+        <legend>폼태그 복습</legend>
+         <table class="table table-bordered" style="width: 500px;">
+            <tr>
+                <th class="table-success">이름</th>
+                <td>
+                    <input type="text" class="form-control" id="myName" style="width: 150px;">
+                </td>
+            </tr>
+            <tr>
+                <th class="table-success">성별</th>
+                <td>
+                    <label><input type="checkbox" id="chkGender">&nbsp;남자</label>
+                </td>
+            </tr>
+            <tr>
+                <th class="table-success">생년월일</th>
+                <td>
+                    <label><input type="date" id="myDate" style="width: 150px;"></label>
+                </td>
+            </tr>
+            <tr>
+                <th class="table-success">거주지</th>
+                <td>
+                    <label><input type="radio" name="hometown" value="서울" checked>&nbsp;서울</label>
+                    <label><input type="radio" name="hometown" value="경기">&nbsp;경기</label>
+                    <label><input type="radio" name="hometown" value="부산">&nbsp;부산</label>
+                    <label><input type="radio" name="hometown" value="인천">&nbsp;인천</label>
+                    <label><input type="radio" name="hometown" value="제주">&nbsp;제주</label>
+                </td>
+            </tr>
+
+            <tr>
+                <th class="table-success">취미</th>
+                <td>
+                    <label><input type="checkbox" name="myHobby" value="게임" checked>&nbsp;게임</label>
+                    <label><input type="checkbox" name="myHobby" value="여행">&nbsp;여행</label>
+                    <label><input type="checkbox" name="myHobby" value="코딩">&nbsp;코딩</label>
+                    <label><input type="checkbox" name="myHobby" value="넷플릭스">&nbsp;넷플릭스</label>
+                    <label><input type="checkbox" name="myHobby" value="공부">&nbsp;공부</label>
+                </td>
+            </tr>
+
+            <tr>
+                <th class="table-success">글꼴선택</th>
+                <td>
+                    <select name="" id="selfont">
+                        <option>Nanum Pen Script</option>
+                        <option>'Courier New', Courier, monospace</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <button type="button" class="btn btn-success" id="btnShow">결과출력</button>
+                </td>
+            </tr>
+
+         </table>
+
+         <div id="result"></div>
+    </form>
+
+    <script>
+
+        $("#btnShow").click(function(){
+            var str="";
+
+            var name = $("#myName").val();
+
+            var gender = "여자";
+            var bool = $("#chkGender").is(":checked");
+            if(bool==true) gender = "남자";
+
+            var birth = $("#myDate").val();
+
+            var home = $("input[name='hometown']:checked").val();
+
+            var hobbyLen = $("input[name='myHobby']:checked").length;
+            var hobby="";
+            if(hobbyLen==0){
+                hobby +="취미 없음";
+            }else{
+                $("input[name='myHobby']:checked").each(function(){
+                    hobby += $(this).val()+"&nbsp";
+                })
+            }
+
+            var font = $("#selfont option:selected").text();
+
+        
+            str += "이름: " + name + "<br>";
+            str += "성별: " + gender + "<br>";
+            str += "생년월일: " + birth + "<br>";
+            str += "거주지: " + home + "<br>";
+            str += "취미: " + hobby + "<br>";
+
+            $("#result").css("font-family",font);
+            $("#result").html(str);
+        })
+
+        
+
+
+    </script>
+
+
+
+
+</body>
+</html>

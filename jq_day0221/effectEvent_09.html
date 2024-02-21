@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    
+    <style>
+        #msg{
+            position: absolute;
+            left: 100px;
+            top: 350px;
+            font-size: 3em;
+            font-family: Nanum Pen Script;
+        }
+        #img1{
+            position: absolute;
+            left: 300px;
+            top: 450px;
+        }
+    </style>
+</head>
+<body>
+    <button type="button" class="btn btn-outline-info" id="btn1">Hide</button>
+    <button type="button" class="btn btn-outline-info" id="btn2">Show</button>
+    <button type="button" class="btn btn-outline-info" id="btn3">Toggle</button>
+
+    <br>
+
+    <button type="button" class="btn btn-outline-info" id="btn4">SlideUp</button>
+    <button type="button" class="btn btn-outline-info" id="btn5">SlideDown</button>
+    <button type="button" class="btn btn-outline-info" id="btn6">SlideToggle</button>
+
+    <br>
+
+    <button type="button" class="btn btn-outline-info" id="btn7">FadeOut</button>
+    <button type="button" class="btn btn-outline-info" id="btn8">FadeIn</button>
+    <button type="button" class="btn btn-outline-info" id="btn9">FadeToggle</button>
+
+    <br>
+
+    <button type="button" class="btn btn-outline-info" id="btn10">FadeTo</button>
+
+
+    <div id="msg">오늘은 비가오는 수요일</div>
+    <img src="../image/jquery_img/c5.png" id="img1">
+
+    <script>
+        $("#btn1").click(function(){
+            $("#msg, #img1").hide(); //slow, fast로 속도 조절 가능
+        })
+
+        $("#btn2").click(function(){
+            $("#msg, #img1").show();
+        })
+
+        $("#btn3").click(function(){
+            $("#msg, #img1").toggle();
+        })
+
+        // -------------------------------
+
+        $("#btn4").click(function(){
+            $("#msg, #img1").slideUp();
+        })
+
+        $("#btn5").click(function(){
+            $("#msg, #img1").slideDown();
+        })
+
+        $("#btn6").click(function(){
+            $("#msg, #img1").slideToggle();
+        })
+
+        // -------------------------------
+
+        $("#btn7").click(function(){
+            $("#msg, #img1").fadeOut();
+        })
+
+        $("#btn8").click(function(){
+            $("#msg, #img1").fadeIn();
+        })
+
+        $("#btn9").click(function(){
+            $("#msg, #img1").fadeToggle();
+        })
+
+        // -------------------------------
+        $("#btn10").click(function(){
+            // 3초 동안 반투명이 된후함수 실행 (시간 ms, 투명도)
+            $("#msg").fadeTo(3000,0.5,function(){
+                $(this).css("border","10px dotted pink");
+            });
+            $("#img1").fadeTo(3000,0.2,function(){
+                $(this).css("opacity","1");
+            });
+        })
+    </script>
+</body>
+</html>
